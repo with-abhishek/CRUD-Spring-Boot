@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+    
+     body {
+            background-color: #000; /* Black background */
+          
+            display: flex;
+           
+            align-items: center;
+          
+        }
+        .card-custom {
+        
+         background-color: #495057; /* Dark input background */
+            border: 1px solid #6c757d; /* Dark border */
+            color: #f8f9fa; /* Light text in input */
+            margin-top: 50px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .card-header-custom {
+           text-align: center;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            padding: 20px;
+        }
+        .card-body-custom {
+            padding: 30px;
+            text-align: center;
+        }
+        .card-title-custom {
+            margin-bottom: 20px;
+            color: #dc3545;
+        }
+        @media (max-width: 576px) {
+            .card-custom {
+                margin: 20px;
+            }
+            .card-body-custom {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="card card-custom">
+        <div class="card-header card-header-custom">
+            <h1>Error</h1>
+        </div>
+        <div class="card-body card-body-custom">
+            <h2 class="card-title card-title-custom">ID Not Found</h2>
+            <p class="card-text">Sorry! The ID <strong th:text="${id}">0</strong> is not present in our database.</p>
+        </div>
+        <div class="row justify-content-center mb-4">
+             <div class="btn-container">
+                 <a th:href="@{/find}" class="btn btn-success btn-custom">Back to Search</a>
+                <a th:href="@{/}" class="btn btn-outline-primary btn-custom">Home</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Details</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #000; /* Black background */
+            display: flex;
+            align-items: center;
+ 
+        }
+        .card-custom {
+            margin-top: 20px;
+            border-radius: 10px;
+             background-color: #495057; /* Dark input background */
+            border: 1px solid #6c757d; /* Dark border */
+            color: #f8f9fa; /* Light text in input */
+        }
+        .card-header-custom {
+            background-color: #343a40;
+            color: white;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            padding: 20px;
+        }
+        .card-body-custom {
+        
+            padding: 30px;
+             color: white;
+        }
+        .card-title-custom {
+            margin-bottom: 20px;
+            color: white;
+            font-size: 1.5rem;
+        }
+        .card-text-custom {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+        .btn-custom {
+            padding: 10px 20px;
+            font-size: 1rem;
+        }
+        @media (max-width: 576px) {
+            .card-body-custom {
+                padding: 20px;
+            }
+            .card-title-custom {
+                font-size: 1.25rem;
+            }
+            .card-text-custom {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card card-custom">
+            <div class="card-header card-header-custom text-center">
+                <h1>Welcome to the Corporate World</h1>
+            </div>
+            <div class="card-body card-body-custom">
+                <h2 class="card-title card-title-custom text-center">Employee Details</h2>
+                <div class="text-center">
+                    <p class="card-text card-text-custom">
+                        <strong>Your Name:</strong> <span th:text="${emp.name}"></span>
+                    </p>
+                    <p class="card-text card-text-custom">
+                        <strong>Your Email:</strong> <span th:text="${emp.email}"></span>
+                    </p>
+                    <p class="card-text card-text-custom">
+                        <strong>Your Age:</strong> <span th:text="${emp.age}"></span>
+                    </p>
+                    <p class="card-text card-text-custom">
+                        <strong>Your Salary:</strong> <span th:text="${emp.salary}"></span>
+                    </p>
+                </div>
+            </div>
+            <div class="row justify-content-center mb-3">
+                <div class="btn-container">
+                 <a th:href="@{/find}" class="btn btn-success btn-custom">Back to Search</a>
+                <a th:href="@{/}" class="btn btn-outline-primary btn-custom">Home</a>
+            </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
